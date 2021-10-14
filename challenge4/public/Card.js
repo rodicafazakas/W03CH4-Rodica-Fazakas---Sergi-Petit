@@ -1,6 +1,7 @@
 import Componente from "./Componente.js";
 
 class Card extends Componente {
+
   element;
   parentElement;
 
