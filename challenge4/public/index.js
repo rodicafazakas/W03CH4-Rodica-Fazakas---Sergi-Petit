@@ -1,6 +1,9 @@
 import Card from "./Card.js";
 import Componente from "./Componente.js";
+import SeriesService from "./SeriesService.js";
 
-const componentePadre = new Componente(document.body, "pia-background");
-const p = new Componente(componentePadre, "text", p);
+ const urlApi = "http://localhost:3001/series";
+
+const services = new SeriesService
+console.log(services.getSerie())
 
