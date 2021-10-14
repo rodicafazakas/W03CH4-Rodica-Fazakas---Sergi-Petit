@@ -7,6 +7,8 @@ class Componente {
     this.element.className = className;
     this.parentElement.append(this.element);
   }
+
+  
 }
 
 export default Componente;
