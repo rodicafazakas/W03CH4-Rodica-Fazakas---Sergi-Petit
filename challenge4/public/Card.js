@@ -5,16 +5,15 @@ class Card extends Componente {
   element;
   parentElement;
 
-  constructor(parentElement, className, htmlTag = "div") {
-    this.parentElement = parentElement;
-    this.element.className = "series-list";
-    this.htmlTag = "ul";
+  constructor(parentElement, {name, creator, year, poster, watched, score, emmies}) {
+    super(parentElement)
+    this.element.className = "serie";
+    this.htmlTag = "li";
+    this.card = {name, creator, year, poster, watched, score, emmies};
   }
-  generateHtml(serie, parentElement) {
-    const createNewLi = document.createElement("li");
-    createNewLi.className = "serie";
-    createNewLi.innerHTML = `
-    <li class="serie">
+
+  generateHtml({name, creator, year, poster, watched, score, emmies}) {
+    this.element.innerHTML = `
       <img
         class="serie__poster"
         src="https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
@@ -40,9 +39,9 @@ class Card extends Componente {
         </li>
       </ul>
       <i class="fas fa-times-circle icon--delete"></i>
-    </li>;
+   
     `;
-    document.appendChild(createNewLi);
+    this.parentElement.appendChild(this.element);
   }
 }
 
