@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --watchAll"
   },
   "repository": {
     "type": "git",
@@ -18,10 +18,25 @@
   "homepage": "https://github.com/rodicafazakas/W03CH4-Rodica-Fazakas---Sergi-Petit#readme",
   "description": "",
   "devDependencies": {
+    "@babel/plugin-transform-modules-commonjs": "^7.15.4",
     "eslint": "^7.32.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
     "jest": "^27.2.5"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+   "parser": "@babel/eslint-parser",
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
   }
-}
+ 
+  
