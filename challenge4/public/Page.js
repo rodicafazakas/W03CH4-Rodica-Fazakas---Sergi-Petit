@@ -1,18 +1,19 @@
 //import Componente from "./Componente.js";
-//import Card from "./Card2.js";
+import Card from "./Card.js";
 
 
 class Page {
-  element;
+  parentElement;
   series;
-
-  constructor(parentElement, { series }) {
+  
+  constructor(parentElement,  series ) {
     //super(parentElement);
-    this.element = parentElement;
+    this.parentElement = parentElement;
     this.series = series;
     this.generateHTML();
   }
-    
+  
+  
    generateHTML() {
     const html = ` 
       <header class="main-header">
@@ -50,33 +51,6 @@ class Page {
             <p class="info">You have 4 series pending to watch</p>
             <!--<p class="info">Congrats! You've watched all your series</p>-->
             <ul class="series-list">
-              <li class="serie">
-                <img
-                  class="serie__poster"
-                  src="https://m.media-amazon.com/images/M/MV5BZGJjYzhjYTYtMDBjYy00OWU1LTg5OTYtNmYwOTZmZjE3ZDdhXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_.jpg"
-                  alt="The Sopranos poster"
-                />
-                <h4 class="serie__title">The Sopranos</h4>
-                <p class="serie__info">David Chase (1999)</p>
-                <ul class="score">
-                  <li class="score__star">
-                    <i class="icon--score fas fa-star" title="1/5"></i>
-                  </li>
-                  <li class="score__star">
-                    <i class="icon--score fas fa-star" title="2/5"></i>
-                  </li>
-                  <li class="score__star">
-                    <i class="icon--score fas fa-star" title="3/5"></i>
-                  </li>
-                  <li class="score__star">
-                    <i class="icon--score fas fa-star" title="4/5"></i>
-                  </li>
-                  <li class="score__star">
-                    <i class="icon--score fas fa-star" title="5/5"></i>
-                  </li>
-                </ul>
-                <i class="fas fa-times-circle icon--delete"></i>
-              </li>
               
               <li class="serie">
                 <img
@@ -310,11 +284,11 @@ class Page {
           </ul>
         </section>
       </main>`; 
-    this.element.innerHTML = html;
-    /*const seriesContainer = document.querySelector(".series");
+    this.parentElement.innerHTML = html;
+    const seriesContainer = document.querySelector(".series-list");
     this.series.map(
-      (card) => new Gentleman(seriesContainer, card)
-    );*/
+      (card) => new Card(seriesContainer, card)
+    );
   }
 }
 
