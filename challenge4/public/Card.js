@@ -1,18 +1,20 @@
 import Componente from "./Componente.js";
 
-class Card extends Componente {
-
+class Card {
   element;
   parentElement;
+  serie;
 
-  constructor(parentElement, {name, creator, year, poster, watched, score, emmies}) {
-    super(parentElement)
-    this.element.className = "serie";
-    this.htmlTag = "li";
-    this.card = {name, creator, year, poster, watched, score, emmies};
+  constructor(parentElement, serie) {
+    this.element = document.createElement('li');
+    this.element.className = 'serie';
+    this.parentElement =parentElement;
+    this.parentElement.append(this.element);
+    this.serie = serie;
+    this.generateHTML();
   }
 
-  generateHtml({name, creator, year, poster, watched, score, emmies}) {
+  generateHTML() {
     this.element.innerHTML = `
       <img
         class="serie__poster"
