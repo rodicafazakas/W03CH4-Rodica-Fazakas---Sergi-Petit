@@ -48,12 +48,14 @@ img {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background-color:red
 }
 .serie {
   width: 24%;
   height: 422px;
   margin-bottom: 20px;
   position: relative;
+  //background-color: blanchedalmond;
 }
 .serie .icon--delete {
   position: absolute;
