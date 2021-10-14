@@ -1,6 +1,10 @@
 import Card from "./Card.js";
 import Componente from "./Componente.js";
+import Serie from "./Serie.js"; 
+import Page from "./Page.js"
 
-const componentePadre = new Componente(document.body, "pia-background");
-const p = new Componente(componentePadre, "text", p);
+const theSopranos = new Serie("The Sopranos", "David Chase", 1999, 5);
 
+const app = document.querySelector(".container");
+
+new Page (app, [theSopranos]);
